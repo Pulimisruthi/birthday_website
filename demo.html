@@ -1,0 +1,766 @@
+<!-- unseen things code -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gifts From My Heart 🎁</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/unseen_things.css">
+</head>
+<body>
+
+  <!-- ORANGE BACKGROUND -->
+  <div class="orange-bg"></div>
+
+  <!-- FIXED HEADER -->
+  <header class="fixed-header">
+  <div class="header-inner">
+    <h1>
+      Gifts From My Heart <span class="emoji">🎁</span>
+    </h1>
+    <p>Every gift holds a reason, every reason holds a memory</p>
+  </div>
+</header>
+
+  <main class="content">
+
+    <!-- TAP TO SEE -->
+    <div class="tap-box" id="tapBox">
+      <h3>Gifts 🎁</h3>
+      <p>(Tap to see)</p>
+    </div>
+
+    <!-- GIFTS CONTAINER -->
+    <div class="gifts-container" id="giftsContainer">
+
+      <!-- GIFT 1 -->
+      <div class="gift-row gift-1">
+        <div class="gift-image"></div>
+        <p>This is for all the smiles you give without trying.</p>
+      </div>
+
+      <div class="gift-row gift-2">
+       <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-3">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-4">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-5">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-6">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-7">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-8">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-9">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-10">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-11">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+
+      <div class="gift-row gift-12">
+        <div class="gift-image"></div>
+        <p>Because I know how much this means to you.</p>
+      </div>
+ 
+      <!-- FINAL MESSAGE -->
+      <div class="final-note">
+        These are not gifts.<br>
+        These are beautiful memories — from the past, for the future 🤍
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="./js/unseen_things.js"></script>
+</body>
+</html>
+js code
+const giftRows = document.querySelectorAll(".gift-row");
+const tapBox = document.getElementById("tapBox");
+const giftsContainer = document.getElementById("giftsContainer");
+
+// assign left / right animation
+giftRows.forEach((row, index) => {
+  if (index % 2 === 0) {
+    row.classList.add("from-left");
+  } else {
+    row.classList.add("from-right");
+  }
+});
+
+let revealed = false;
+
+tapBox.addEventListener("click", () => {
+  if (revealed) return;
+
+  revealed = true;
+  giftsContainer.style.display = "flex";
+
+  giftRows.forEach((row, index) => {
+    setTimeout(() => {
+      row.classList.add("show");
+    }, index * 1000);
+  });
+});
+ css code
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  min-height: 100vh;
+  color: skyblue;
+}
+
+/* STRONG ORANGE BACKGROUND */
+.orange-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(100,181,246,0.45), transparent 60%),
+    linear-gradient(
+      180deg,
+      #e3f2fd,
+      #bbdefb,
+      #a4cdef
+    );
+  z-index: -1;
+}
+
+/* FIXED HEADER */
+.fixed-header {
+  position: relative; /* IMPORTANT */
+  width: 100%;
+  padding: 40px 20px 10px;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: center;
+}
+
+
+/* INNER GLASS CARD */
+.header-inner {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+}
+.fixed-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 6px;
+
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(255,255,255,0.35);
+}
+.fixed-header h1 .emoji {
+  -webkit-text-fill-color: initial;
+  background: none;
+  text-shadow: none;
+  filter: none;
+}
+
+.fixed-header p {
+  margin-bottom: 18px;
+  font-size: 18px;
+  color: #5b7fa6;
+}
+
+.fixed-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25), transparent 40%),
+    radial-gradient(circle at 80% 40%, rgba(255,255,255,0.18), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.12), transparent 50%);
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .fixed-header h1 {
+    font-size: 34px;
+  }
+
+  .fixed-header p {
+    font-size: 20px;
+  }
+}
+
+/* CONTENT */
+.content {
+  padding-top: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* TAP BOX */
+.tap-box {
+  background: rgba(255,255,255,0.75);
+  border-radius: 22px;
+  padding: 32px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 25px 55px rgba(21, 101, 192, 0.35);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tap-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 75px rgba(21, 101, 192, 0.45);
+}
+
+/* GIFTS */
+/* GIFTS CONTAINER HIDDEN INITIALLY */
+.gifts-container {
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+/* HORIZONTAL GIFT */
+.gift-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 30px;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 150, 243, 0.25);
+  opacity: 0;
+}
+
+/* FROM LEFT */
+.gift-row.from-left {
+  transform: translateX(-120%) scale(0.95);
+}
+
+/* FROM RIGHT */
+.gift-row.from-right {
+  transform: translateX(120%) scale(0.95);
+  animation: softGlow 1.8s ease forwards;
+}
+@keyframes softGlow {
+  from { box-shadow: 0 0 0 rgba(255,140,0,0); }
+  to { box-shadow: skyblue; }
+}
+/* FINAL POSITION */
+.gift-row.show {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  box-shadow: 0 24px 60px rgba(135, 206, 235, 0.55);
+}
+
+.gift-row img {
+  width: 140px;
+  border-radius: 18px;
+}
+.gift-row p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* FINAL NOTE */
+.final-note {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  padding: 40px 20px;
+  color: skyblue;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .gift-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gift-row img {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+.gift-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow:
+  0 12px 35px rgba(135, 206, 235, 0.45),
+  0 0 0 6px rgba(200, 230, 255, 0.9);
+}
+
+/* FROM LEFT */
+.gift-row.from-left {
+  transform: translateX(-120%) scale(0.95);
+  opacity: 0;
+}
+
+/* FROM RIGHT */
+.gift-row.from-right {
+  transform: translateX(120%) scale(0.95);
+  opacity: 0;
+}
+
+/* FINAL POSITION */
+.gift-row.show {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  box-shadow: 0 30px 70px skyblue;
+  animation: settle 0.6s ease-out forwards;
+}
+@keyframes settle {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(0) scale(1); }
+}
+.gift-row:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 30px 80px rgba(135, 206, 235, 0.65);
+}
+
+@media (max-width: 768px) {
+  .gift-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .gift-row p {
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .gift-image {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.gift-1 .gift-image {
+  background-image: url("../assets/images/first_selfie.jpeg");
+}
+
+.gift-2 .gift-image {
+  background-image: url("../assets/images/beach_dress.png");
+}
+
+.gift-3 .gift-image {
+  background-image: url("../assets/images/pink_dress(2).png");
+}
+.gift-4 .gift-image {
+  background-image: url("../assets/images/pink_red.png");
+}
+
+.gift-5 .gift-image {
+  background-image: url("../assets/images/beach_dress.png");
+}
+
+.gift-6 .gift-image {
+  background-image: url("../assets/images/pink_dress(3).png");
+}
+.gift-7 .gift-image {
+  background-image: url("../assets/images/pink_dress.png");
+}
+
+.gift-8 .gift-image {
+  background-image: url("../assets/images/tomandjerry_pic.jpeg");
+}
+
+.gift-9 .gift-image {
+  background-image: url("../assets/images/red_dress.png");
+}
+.gift-10 .gift-image {
+  background-image: url("../assets/images/naa_birthday.png");
+}
+
+.gift-11 .gift-image {
+  background-image: url("../assets/images/anna_birthday.jpeg");
+}
+
+.gift-12 .gift-image {
+  background-image: url("../assets/images/whitepink_dress.png");
+}
+<!-- Last card-->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Things I Never Said</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/unsaid_words.css">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="background"></div>
+
+  <!-- CONTENT -->
+  <main class="container">
+    <div class="card" id="card">
+      <div class="scroll-heart" id="scrollHeart">❤️</div>
+      <div class="card-content" id="cardContent"></div>
+      <h1>Things I Never Said</h1>
+      <p class="subtitle">But always felt ❤️</p>
+
+      <div id="typewriter"></div>
+
+      <button class="reveal-btn" onclick="revealMessage()" id="reveal-btn">
+        Tap to reveal more ✨
+      </button>
+
+      <div class="hidden-message" id="hiddenMessage">
+        <p>
+          You were always there — even when I stayed silent.
+        </p>
+        <p>
+          I learned strength by watching you,   I learned strength by watching you,  
+          and courage by walking beside you. I learned strength by watching you,  
+          and courage by walking beside you. I learned strength by watching you,  
+          and courage by walking beside you. I learned strength by watching you,  
+          and courage by walking beside you. I learned strength by watching you,  
+          and courage by walking beside you.v I learned strength by watching you,  
+          and courage by walking beside you.and courage by walking beside you.
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you,   I learned strength by watching you,  
+          and courage by walking beside you.v I learned strength by watching you,  
+          and courage by walking beside you.and courage by walking beside you.
+          and courage by walking beside you.and courage by walking beside you.
+          and courage by walking beside you.v\ I learned strength by watching you,  
+          and courage by walking beside you.and courage by walking beside you.
+
+           I learned strength by watching you,  I learned strength by watching you,  
+          and courage by walking beside you. and courage by walking beside you.
+          and courage by walking beside you.and courage by walking beside you.
+          and courage by walking beside you.    and courage by walking beside you.
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you,  and courage by walking beside you.
+          and courage by walking beside you.and courage by walking beside you.
+
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+           I learned strength by watching you, and courage by walking beside you. 
+          and courage by walking beside you.and courage by walking beside you.
+
+        </p>
+        <p class="signature">— With respect & love</p>
+      </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/unsaid_word.js"></script>
+</body>
+</html>
+js code
+const text =
+"Some feelings stay unspoken...\nNot because they are small, but because they are deep.";
+
+let index = 0;
+const speed = 45;
+const typeEl = document.getElementById("typewriter");
+
+function typeWriter() {
+  if (index < text.length) {
+    typeEl.innerHTML +=
+      text.charAt(index) === "\n" ? "<br>" : text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+typeWriter();
+function revealMessage() {
+  const hiddenMessage = document.getElementById("hiddenMessage");
+  const btn = document.getElementById("revealBtn");
+
+  const isVisible = hiddenMessage.style.display === "block";
+
+  if (isVisible) {
+    // HIDE
+    hiddenMessage.style.display = "none";
+    btn.innerHTML = "Tap to reveal more ✨";
+
+    // optional: scroll back slightly for better UX
+    card.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    // SHOW
+    hiddenMessage.style.display = "block";
+    btn.innerHTML = "Hide the words 🤍";
+  }
+}
+
+const card = document.getElementById("card");
+const heart = document.getElementById("scrollHeart");
+
+// FIXED HEART SCROLL LOGIC (NO INITIAL JUMP)
+card.addEventListener("scroll", () => {
+  const scrollTop = card.scrollTop;
+  const maxScroll = card.scrollHeight - card.clientHeight;
+
+  if (maxScroll <= 0) return;
+
+  const progress = scrollTop / maxScroll;
+
+  const heartHeight = heart.offsetHeight;
+
+  // Real visible scroll area inside the card
+  const topLimit = 0;
+  const bottomLimit = card.clientHeight - heartHeight;
+
+  const translateY = progress * (bottomLimit - topLimit);
+
+  heart.style.transform = `translateY(${translateY}px)`;
+});
+css code
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #e35d6a;
+}
+
+/* SOFT RED BACKGROUND */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    #e35d6a 0%,
+    #d63a4a 40%,
+    #b31e2f 100%
+  );
+}
+
+/* CENTER CONTENT */
+.container {
+  position: relative;
+  z-index: 1; /* VERY IMPORTANT */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* WHITE CARD */
+.card {
+  width: 75vw;
+  max-height: 80vh;        /* IMPORTANT */
+  padding: 36px;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+  overflow-y: auto;        /* INTERNAL SCROLL */
+  scrollbar-width: thin;   /* Firefox */
+  scroll-behavior: smooth;
+  position: relative; /* REQUIRED */
+  scrollbar-width: none;
+  scrollbar-color: #b31e2f rgba(179, 30, 47, 0.15);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GOLD HEADING */
+h1 {
+  font-size: 2rem;
+  color: #c9a227;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 10px 0 22px;
+  color: #b31e2f;
+  font-size: 0.95rem;
+}
+
+/* TEXT */
+#typewriter {
+  min-height: 90px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2c2c2c;
+  margin-bottom: 28px;
+}
+
+/* GOLD BUTTON */
+.reveal-btn {
+  padding: 13px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f2d98b, #e6c36a);
+  color: #5a3b00;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.reveal-btn:hover {
+  transform: scale(1.05);
+}
+
+/* HIDDEN MESSAGE */
+.hidden-message {
+  display: none;
+  margin-top: 26px;
+}
+
+.hidden-message[style*="block"] {
+  animation: reveal 0.8s ease;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hidden-message p {
+  margin-bottom: 14px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+
+/* SIGNATURE */
+.signature {
+  font-weight: 600;
+  color: #b31e2f;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #typewriter {
+    font-size: 0.95rem;
+  }
+}
+/* SCROLLBAR WIDTH */
+.card::-webkit-scrollbar {
+   display: none;
+}
+
+/* TRACK */
+.card::-webkit-scrollbar-track {
+  background: rgba(179, 30, 47, 0.08);
+  border-radius: 10px;
+}
+
+/* THUMB */
+.card::-webkit-scrollbar-thumb {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 10px,
+      #b31e2f 10px,
+      #b31e2f 14px
+    );
+  border-radius: 10px;
+}
+
+/* HEART ICON */
+.card::-webkit-scrollbar-thumb::before {
+  content: "❤️";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  font-size: 18px;
+}
+.scroll-heart {
+  position: absolute;
+  right: 6px;
+  top: 200px;             /* starting position */
+  font-size: 22px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+
+
+
+
+

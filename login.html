@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login💫</title>
+
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  
+  <div class="overlay"></div>
+    <div class="card">
+      <div id="errorToast" class="error-toast"></div>
+      <div class="progress-container">
+         <div class="progress-bar" id="progressBar"></div>
+      </div>
+    <h2 id="cardTitle"></h2>
+    <h3 id="questionText"></h3>
+    <p id="hintText" class="hint"></p>
+    <div id="inputArea">
+      <input type="text" id="answerInput" placeholder="Enter your answer" />
+    </div>
+    <button id="submitBtn">Submit</button>
+  </div>
+  <script src="js/login.js"></script>
+  <audio id="clickSound" src="assets/sounds/click.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <div id="flash" class="flash"></div>
+
+</body>
+</html>

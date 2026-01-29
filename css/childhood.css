@@ -1,0 +1,374 @@
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, #ffe4f1, transparent 40%),
+    radial-gradient(circle at bottom right, #e0f0ff, transparent 40%),
+    linear-gradient(135deg, #fafcff, #f7f2ff);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 40px;     /* ⬆️ moves up */
+  margin-bottom: 10px;  /* ⬇️ keeps space from cards */
+  font-weight: 800;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #ff4ecd,
+    #6a5cff,
+    #00c6ff,
+    #ffb347
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+  letter-spacing: 1px;
+}
+.sub-title {
+   text-align : center;
+   font-size: 20px;
+   position: relative;
+   margin-bottom:90px;
+  }
+.emoji {
+  -webkit-text-fill-color: initial;
+  background: none;
+  display: inline-block;
+  transform: scale(1.1);
+}
+
+@keyframes titleFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glowLine {
+  0% { opacity: 0.4; width: 480px; }
+  50% { opacity: 1; width: 140px; }
+  100% { opacity: 0.4; width: 90px; }
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding: 0 30px;   /* prevents edge overflow */
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile → EXACTLY 2 PER ROW */
+@media (max-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+    padding-bottom: 20px;
+  }
+  .page-title {
+    font-size: 2.2rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .memory-card {
+    height: 220px;
+  }
+}
+
+.memory-card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 280px;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.memory-card:hover .card-back {
+  box-shadow:
+    0 20px 40px rgba(236, 72, 153, 0.45),
+    0 0 25px rgba(167, 139, 250, 0.6);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.memory-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-back {
+  background: linear-gradient(
+    135deg,
+    #1ace11,
+    #077125,
+    #07a424,
+    #15b738
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 6s ease infinite;
+
+  color: #fff;
+  font-size: 1.15rem;
+  padding: 25px;
+  text-align: center;
+
+  border-radius: 20px;
+  box-shadow:
+    0 15px 30px rgba(167, 139, 250, 0.35),
+    inset 0 0 40px rgba(255, 255, 255, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+.card-back p {
+  position: relative;
+  line-height: 1.6;
+}
+
+.card-back p::after {
+  content: "✨";
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes sparkle {
+  from { opacity: 0.4; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.card-front {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Image mapping */
+.img-1 { background-image: url("../assets/images/pink_dress.png"); }
+.img-2 { background-image: url("../assets/images/whitepink_dress.png"); }
+.img-3 { background-image: url("../assets/images/naa_birthday.png"); }
+.img-4 { background-image: url("../assets/images/pink_black.png"); }
+.img-5 { background-image: url("../assets/images/red_dress.png");
+background-position: center 30%; }
+.img-6 { background-image: url("../assets/images/blue_dress.png"); }
+.img-7 { background-image: url("../assets/images/our_selfie.jpeg"); }
+.img-8 { background-image: url("../assets/images/pink_dress(5).jpeg");
+background-position: center 5%; }
+.img-9 { background-image: url("../assets/images/beach.jpeg"); }
+.img-10 { background-image: url("../assets/images/tomandjerry_pic.jpeg"); 
+background-position: center 80%;}
+
+
+.memory-card {
+  height: 280px;
+}
+@media (max-width: 600px) {
+  .memory-card {
+    height: 160px;
+  }
+}
+
+
+/* ===== DISAPPEAR STYLE ===== */
+
+.fade-card .card-front {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-card .card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fb7185, #f472b6);
+  color: white;
+  font-size: 1.2rem;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ACTIVE STATE */
+.fade-card .card-front {
+  transition: opacity 0.6s ease;
+}
+
+.fade-card.active .card-front {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-card .card-back {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade-card.active .card-back {
+  opacity: 1;
+}
+
+/* ✍️ Handwritten typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Emoji pop */
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Enhanced fade-card back */
+.fade-card .card-back {
+  background: linear-gradient(
+    135deg,
+    #60a5fa,
+    #38bdf8,
+    #22d3ee,
+    #3b82f6
+  );
+  background-size: 300% 300%;
+  animation: blueFlow 6s ease infinite;
+
+  /* 💖 Pink shadow */
+  box-shadow:
+    0 18px 40px rgba(236, 72, 153, 0.45),
+    inset 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Typing text */
+.fade-card .card-back p {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(255,255,255,0.8);
+  width: 0;
+}
+/* Typing text */
+.flip-card .card-back p {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(255,255,255,0.8);
+  width: 0;
+}
+/* When active */
+.fade-card.active .card-back p {
+  animation: typing 1.8s steps(30, end) forwards,
+             blink 0.8s infinite;
+}
+
+/* Emoji */
+.fade-card .card-back span {
+  display: inline-block;
+  margin-left: 6px;
+  animation: pop 0.6s ease forwards;
+}
+.fade-card .card-back {
+  background: linear-gradient(
+    135deg,
+    #60a5fa,
+    #38bdf8,
+    #22d3ee,
+    #3b82f6
+  );
+  background-size: 300% 300%;
+  animation: blueFlow 6s ease infinite;
+
+  box-shadow:
+    0 15px 35px rgba(59, 130, 246, 0.45),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+ @keyframes blueFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fade-card:hover .card-back {
+  box-shadow:
+    0 30px 60px rgba(236, 72, 153, 0.7),
+    0 0 35px rgba(244, 114, 182, 0.8);
+}
+.memory-card:not(.fade-card) .card-back {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+
+  /* 💙 Blue shadow */
+  box-shadow:
+    0 18px 40px rgba(59, 130, 246, 0.45),
+    inset 0 0 25px rgba(255, 255, 255, 0.2);
+}
+.memory-card:not(.fade-card):hover .card-back {
+  box-shadow:
+    0 30px 60px rgba(59, 130, 246, 0.7),
+    0 0 35px rgba(56, 189, 248, 0.8);
+}
+/* Typing for FLIP cards */
+.flip-card.flipped .card-back p {
+  animation: typing 1.8s steps(30, end) forwards,
+             blink 0.8s infinite;
+}
+
+/* Reset typing when unflipped */
+.flip-card .card-back p {
+  width: 0;
+}

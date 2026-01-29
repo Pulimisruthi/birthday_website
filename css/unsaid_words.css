@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #e35d6a;
+}
+
+/* SOFT RED BACKGROUND */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    #e35d6a 0%,
+    #d63a4a 40%,
+    #b31e2f 100%
+  );
+}
+
+/* CENTER CONTENT */
+.container {
+  position: relative;
+  z-index: 1; /* VERY IMPORTANT */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* WHITE CARD */
+.card {
+  width: 75vw;
+  max-height: 80vh;        /* IMPORTANT */
+  padding: 36px;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+  overflow-y: auto;        /* INTERNAL SCROLL */
+  scrollbar-width: thin;   /* Firefox */
+  scroll-behavior: smooth;
+  position: relative; /* REQUIRED */
+  scrollbar-width: none;
+  scrollbar-color: #b31e2f rgba(179, 30, 47, 0.15);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GOLD HEADING */
+h1 {
+  font-size: 2rem;
+  color: #c9a227;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 10px 0 22px;
+  color: #b31e2f;
+  font-size: 0.95rem;
+}
+
+/* TEXT */
+#typewriter {
+  min-height: 90px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2c2c2c;
+  margin-bottom: 28px;
+}
+
+/* GOLD BUTTON */
+.reveal-btn {
+  padding: 13px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f2d98b, #e6c36a);
+  color: #5a3b00;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.reveal-btn:hover {
+  transform: scale(1.05);
+}
+
+/* HIDDEN MESSAGE */
+.hidden-message {
+  display: none;
+  margin-top: 26px;
+}
+
+.hidden-message[style*="block"] {
+  animation: reveal 0.8s ease;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hidden-message p {
+  margin-bottom: 14px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+
+/* SIGNATURE */
+.signature {
+  font-weight: 600;
+  color: #b31e2f;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #typewriter {
+    font-size: 0.95rem;
+  }
+}
+/* SCROLLBAR WIDTH */
+.card::-webkit-scrollbar {
+   display: none;
+}
+
+/* TRACK */
+.card::-webkit-scrollbar-track {
+  background: rgba(179, 30, 47, 0.08);
+  border-radius: 10px;
+}
+
+/* THUMB */
+.card::-webkit-scrollbar-thumb {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 10px,
+      #b31e2f 10px,
+      #b31e2f 14px
+    );
+  border-radius: 10px;
+}
+
+/* HEART ICON */
+.card::-webkit-scrollbar-thumb::before {
+  content: "❤️";
+  position: absolute;
+  top: 0;
+  left: -2px;
+  font-size: 18px;
+}
+.scroll-heart {
+  position: absolute;
+  right: 6px;
+  top: 200px;             /* starting position */
+  font-size: 22px;
+  pointer-events: none;
+  z-index: 20;
+}
+

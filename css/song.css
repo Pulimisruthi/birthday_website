@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #3a2c12;
+}
+
+/* GOLD BACKGROUND */
+.gold-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, #fff3c4, transparent 60%),
+    linear-gradient(180deg, #fff7dd, #f1d58b);
+  z-index: -1;
+}
+
+/* MAIN WRAPPER */
+.song-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.title {
+  font-size: 50px;
+  color: #b8942e;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #6d5631;
+}
+
+/* LYRICS */
+.lyrics-box {
+  margin-top: 60px;
+}
+
+.lyric {
+  font-size: 22px;
+  margin: 26px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* WHEN VISIBLE */
+.lyric.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MESSAGE */
+.message-box {
+  margin-top: 80px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(184, 148, 46, 0.35);
+}
+
+.message-box h2 {
+  color: #b8942e;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.message-box p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* AUDIO */
+.player {
+  margin-top: 50px;
+}
+
+audio {
+  width: 320px;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .lyric {
+    font-size: 18px;
+  }
+}
+/* GOLD SHIMMER EFFECT */
+.lyric.show {
+  position: relative;
+  overflow: hidden;
+}
+
+.lyric.show::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 215, 120, 0.7),
+    transparent 70%
+  );
+  animation: shimmer 1.8s ease forwards;
+}
+
+@keyframes shimmer {
+  from {
+    left: -120%;
+  }
+  to {
+    left: 120%;
+  }
+}
+/* SOFT GLOW ON HOVER */
+.lyric {
+  cursor: default;
+}
+
+.lyric:hover {
+  color: #b8942e;
+  text-shadow:
+    0 0 6px rgba(184, 148, 46, 0.6),
+    0 0 14px rgba(255, 215, 120, 0.4);
+  transform: scale(1.04);
+}
+.lyric {
+  background: linear-gradient(90deg, #6d5631, #b8942e, #6d5631);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* FIXED HEADER */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  padding: 60px 20px 50px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 247, 221, 0.95),
+    rgba(255, 247, 221, 0.75),
+    transparent
+  );
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+/* PUSH CONTENT BELOW FIXED HEADER */
+.song-wrapper {
+  padding-top: 200px; /* space for fixed title */
+}
