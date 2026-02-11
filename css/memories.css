@@ -171,6 +171,7 @@ html, body {
   opacity: 0;
   transition: all 0.9s cubic-bezier(0.22,1,0.36,1);
   position: relative;
+  pointer-events: auto !important;
 }
 
 /* Reveal Animation */
@@ -265,10 +266,77 @@ html, body {
   backdrop-filter: blur(3px);
   border-radius: 30px;
   transition: opacity 0.4s ease;
+
+  pointer-events: none !important; /* ⭐ THIS FIXES CLICK */
 }
 
-.memory-card-vertical.locked:hover .lock-overlay {
-  opacity: 0.85;
+.password-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* Darker background */
+  display: none; /* Keep hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Make sure it's on top of everything */
+}
+
+.password-box {
+  background: white;
+  padding: 30px 26px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.password-box h2 {
+  margin-bottom: 10px;
+  color: #6d28d9;
+}
+
+.password-box p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.modal-actions button:first-child {
+  background: #e5e7eb;
+}
+
+.modal-actions button:last-child {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  color: white;
 }
 
 

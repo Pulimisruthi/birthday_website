@@ -41,36 +41,36 @@ const prevBtn = document.querySelector(".prev");
 
 const images = [
   {
-    desktopSrc: "assets/images/rakhi.jpeg",
-    mobileSrc: "assets/images/pink_dress(2).png",
+    desktopSrc: "../assets/images/rakhi.jpeg",
+    mobileSrc: "../assets/images/rakhi(2).jpeg",
     text: "A small thread… holding a lifetime of love,where i can forward that day through out my life ❤️",
     desktopPos: "center 25%",
-    mobilePos: "30% center"
+    mobilePos: "55% center"
   },
   {
-    desktopSrc: "assets/images/tomandjerry_pic.jpeg",
-    mobileSrc: "assets/images/tomandjerry_pic.jpeg",
+    desktopSrc: "../assets/images/tomandjerry_pic.jpeg",
+    mobileSrc: "../assets/images/tomandjerry_pic.jpeg",
     text: "You are my tom & i am your jerry,i don't like fighting with you but that is the thing I do the most 😂😂",
     desktopPos: "center 65%",
     mobilePos: "center"
   },
   {
-    desktopSrc: "assets/images/anna_birthday.jpeg",
-    mobileSrc: "assets/images/anna_birthday.jpeg",
+    desktopSrc: "../assets/images/anna_birthday.jpeg",
+    mobileSrc: "../assets/images/anna_birthday.jpeg",
     text: "Some bonds very special like ours,fights and misunderstands may increase gap btw each other but doesnot decrease the love ❤️🤍",
     desktopPos: "center 35%",
     mobilePos: "45% center"
   },
   {
-    desktopSrc: "assets/images/naa_birthday.png",
-    mobileSrc: "assets/images/naa_birthday.png",
+    desktopSrc: "../assets/images/naa_birthday.png",
+    mobileSrc: "../assets/images/naa_birthday.png",
     text: "Where my memories began — with you and one of the best birthday for me 💛❤️",
     desktopPos: "center",
     mobilePos: "50% center"
   },
   {
-    desktopSrc: "assets/images/selfie(2).jpeg",
-    mobileSrc: "assets/images/first_selfie.jpeg",
+    desktopSrc: "../assets/images/selfie(2).jpeg",
+    mobileSrc: "../assets/images/first_selfie.jpeg",
     text: "Our selfie,Captured together, forever.Not perfect, but perfectly ours.❤️✨✨",
     desktopPos: "100% center",
     mobilePos: "30% top"
@@ -149,27 +149,39 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 blocks.forEach(b => revealObserver.observe(b));
+const PASSWORD = "thammudu"; 
+const targetPage = "unsaid_words.html"; // The page to open
 
-const UNLOCK_KEY = "unsaid_words_unlocked";
-const SECRET_CODE = "anna"; // you can change this ❤️
+function handleLockedCard(card) {
+  console.log("Opening Modal... ✅");
+  // Show the custom modal instead of a prompt
+  document.getElementById("passwordModal").style.display = "flex";
+}
 
-function handleCardClick(card) {
-  const page = card.dataset.page;
+function closeModal() {
+  document.getElementById("passwordModal").style.display = "none";
+  document.getElementById("passwordInput").value = "";
+}
 
-  // already unlocked
-  if (localStorage.getItem(UNLOCK_KEY) === "true") {
-    window.location.href = page;
-    return;
-  }
+function unlockCard() {
+  const input = document.getElementById("passwordInput").value;
 
-  // ask for password
-  const input = prompt("This page is locked 🤍\nEnter the secret word:");
-
-  if (input && input.toLowerCase() === SECRET_CODE) {
-    localStorage.setItem(UNLOCK_KEY, "true");
-    alert("Unlocked with love 🤍✨");
-    window.location.href = page;
+  if (input === PASSWORD) {
+    alert("Correct password 🎉");
+    window.location.href = targetPage;
   } else {
-    alert("Not yet… this memory opens with the right heart 💌");
+    // Error feedback
+    alert("Wrong password ❌ Try again, heart!");
+    document.getElementById("passwordInput").value = "";
+    document.getElementById("passwordInput").focus();
   }
 }
+
+// Optional: Allow "Enter" key to submit password
+document.getElementById("passwordInput")?.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") unlockCard();
+});
+
+
+
+

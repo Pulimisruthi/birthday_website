@@ -249,7 +249,8 @@ body {
 }
 
 .gift-2 .gift-image {
-  background-image: url("../assets/images/shirt.jpg");
+  background-image: url("../assets/images/shirt.jpeg");
+  background-position: center 80%;
 }
 
 .gift-3 .gift-image {
@@ -265,21 +266,22 @@ body {
 }
 
 .gift-6 .gift-image {
-  background-image: url("../assets/images/paper_flower_vase.jpg");
+  background-image: url("../assets/images/moon_lamp.jpeg");
 }
 .gift-7 .gift-image {
-  background-image: url("../assets/images/zandu_balm.jpg");
+  background-image: url("../assets/images/zandubalm.webp");
 }
 
 .gift-8 .gift-image {
-  background-image: url("../assets/images/dry_fruits.jpg");
+  background-image: url("../assets/images/laddu.webp");
 }
 
 .gift-9 .gift-image {
-  background-image: url("../assets/images/song.png");
+  background-image: url("../assets/images/monks.jpeg");
 }
 .gift-10 .gift-image {
-  background-image: url("../assets/images/frame.jpg");
+  background-image: url("../assets/images/Cap.jpeg");
+  background-position: center 85%;
 }
 
 .gift-11 .gift-image {
@@ -287,5 +289,6 @@ body {
 }
 
 .gift-12 .gift-image {
-  background-image: url("../assets/images/whitepink_dress.png");
+  background-image: url("../assets/images/photo_frame.jpeg");
+  background-position: center 85%;
 }

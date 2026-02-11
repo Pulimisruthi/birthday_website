@@ -1,5 +1,5 @@
 const text =
-"Some feelings stay unspoken...\nNot because they are small, but because they are deep.";
+"Some feelings stay unspoken...\nNot because they are small, but because they are near to heart.";
 
 let index = 0;
 const speed = 45;
@@ -26,14 +26,14 @@ function revealMessage() {
     hiddenMessage.style.display = "none";
     btn.innerHTML = "Tap to reveal more ✨";
 
-    // optional: scroll back slightly for better UX
     card.scrollTo({ top: 0, behavior: "smooth" });
   } else {
     // SHOW
     hiddenMessage.style.display = "block";
-    btn.innerHTML = "Hide the words 🤍";
+    btn.innerHTML = "Tap to hide the words ✨";
   }
 }
+
 
 const card = document.getElementById("card");
 const heart = document.getElementById("scrollHeart");

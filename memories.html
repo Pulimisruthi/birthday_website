@@ -17,13 +17,13 @@
 </div>
 
 <audio id="bgMusic" loop>
-  <source src="assets/music/anna_sister_song.mp3" type="audio/mpeg">
+  <source src="../assets/music/anna_sister_song.mp3" type="audio/mpeg">
 </audio>
 <section class="memory-sections">
 
   <div class="memory-card-vertical" onclick="openPage('childhood.html')">
     <div class="card-image">
-      <img src="assets/images/pink_dress(3).png" class="face-fix" alt="">
+      <img src="../assets/images/pink_dress(3).png" class="face-fix" alt="">
     </div>
     <div class="card-content">
       <h3>My Favorite Memories<span class="emoji">🤍💫</span></h3>
@@ -33,7 +33,7 @@
 
   <div class="memory-card-vertical" onclick="openPage('gifts.html')">
     <div class="card-image">
-      <img src="assets/images/gift_box.jpg" alt="">
+      <img src="../assets/images/gift_box.jpg" alt="">
     </div>
     <div class="card-content">
       <h3>Little Things, Big Love <span class="emoji">🎁💝</span></h3>
@@ -43,7 +43,7 @@
 
   <div class="memory-card-vertical" onclick="openPage('song.html')">
     <div class="card-image">
-      <img src="assets/images/song.png" alt="">
+      <img src="../assets/images/song.png" alt="">
     </div>
     <div class="card-content">
       <h3>Our Unwritten Story  <span class="emoji">🎶🤍</span></h3>
@@ -53,7 +53,7 @@
 
   <div class="memory-card-vertical" onclick="openPage('memory.html')">
     <div class="card-image">
-      <img src="assets/images/suprise.jpg" alt="">
+      <img src="../assets/images/suprise.jpg" alt="">
     </div>
     <div class="card-content">
        <h3>Precious Token of Love <span class="emoji">🤍✨</span></h3>
@@ -61,55 +61,47 @@
     </div>
   </div>
 
-  <!--<div class="memory-card-vertical" onclick="openPage('unseen_things.html')">
+  <div class="memory-card-vertical" onclick="openPage('unseen_things.html')">
     <div class="card-image">
-      <img src="assets/images/gift_unwrapping.jpeg" alt="">
+      <img src="../assets/images/gift_unwrapping.jpeg" alt="">
     </div>
     <div class="card-content">
       <h3>Unseen Things,Yet to be Unwrapped <span class="emoji">🎁✨</span></h3>
       <p>Soon… with love & smiles <span class="emoji">🎉✨</span></p>
-    </div>data-page="unseen_things.html"
-  </div>-->
-  <div class="memory-card-vertical locked"
-     
-     onclick="handleCardClick(this)">
-  <div class="lock-overlay">
-    Loading......Come back on Feb 15🔒
+    </div>
   </div>
 
+  <div class="memory-card-vertical locked"
+     onclick="handleLockedCard(this); console.log('CARD CLICKED ✅')">
+
+  <div class="lock-overlay">🔒 Unlock to see</div>
+
   <div class="card-image">
-    <img src="assets/images/gift_unwrapping.jpeg" alt="">
+    <img src="../assets/images/note_pic.jpeg" alt="">
   </div>
+
   <div class="card-content">
-    <h3>Unseen Things,Yet to be Unwrapped <span class="emoji">🎁✨</span></h3>
-    <p>Soon… with love & smiles <span class="emoji">🎉✨</span></p>
+    <h3>My Heart Story (Unsaid words) <span class="emoji">💌✨</span></h3>
+    <p>Feelings I hold close <span class="emoji">🤍✨</span></p>
   </div>
 </div>
 
 
-  <!--<div class="memory-card-vertical" onclick="openPage('unsaid_words.html')">
-    <div class="card-image">
-      <img src="assets/images/note_pic.jpeg" alt="">
+<!-- Password Modal -->
+<div id="passwordModal" class="password-modal">
+  <div class="password-box">
+    <h2>🔒 Secret Memory</h2>
+    <p>This one opens only with the right heart, who know the right word 🤍</p>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Enter the secret word"
+    />  
+    <div class="modal-actions">
+      <button onclick="closeModal()">Cancel</button>
+      <button onclick="unlockCard()">Unlock ✨</button>
     </div>
-    <div class="card-content">
-      <h3>My Heart Story (Unsaid words) <span class="emoji">💌✨</span></h3>
-      <p>Feelings I hold close <span class="emoji">🤍✨</span></p>
-    </div>data-page="unsaid_words.html"
-  </div>-->
-
-  <div class="memory-card-vertical locked"
-    
-     onclick="handleCardClick(this)">
-  <div class="lock-overlay">
-    Loading......Come back tomarrow🔒
-  </div>
-
-  <div class="card-image">
-    <img src="assets/images/note_pic.jpeg" alt="">
-  </div>
-  <div class="card-content">
-    <h3>My Heart Story (Unsaid words) <span class="emoji">💌✨</span></h3>
-    <p>Feelings I hold close <span class="emoji">🤍✨</span></p>
   </div>
 </div>
 

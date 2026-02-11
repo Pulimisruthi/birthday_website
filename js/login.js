@@ -1,11 +1,11 @@
 const errorText = document.getElementById("errorToast");
 
 const backgrounds = [
-  { img: "assets/images/pink_red.png", desktop: "35% 45%", mobile: "50% 60%" },
-  { img: "assets/images/blue_dress.png", desktop: "35% 60%", mobile: "50% 80%" },
-  { img: "assets/images/pink_dress.png", desktop: "50% 40%", mobile: "60% 40%" },
-  { img: "assets/images/red_dress.png", desktop: "50% 30%", mobile: "50% 40%" },
-  { img: "assets/images/pink_dress(2).png", desktop: "50% 30%", mobile: "center" }
+  { img: "../assets/images/pink_red.png", desktop: "35% 45%", mobile: "50% 60%" },
+  { img: "../assets/images/blue_dress.png", desktop: "35% 60%", mobile: "50% 80%" },
+  { img: "../assets/images/pink_dress.png", desktop: "50% 40%", mobile: "60% 40%" },
+  { img: "../assets/images/red_dress.png", desktop: "50% 30%", mobile: "50% 40%" },
+  { img: "../assets/images/pink_dress(2).png", desktop: "50% 30%", mobile: "center" }
 ];
 
 const correctAnswers = {
@@ -13,7 +13,7 @@ const correctAnswers = {
   1: "30-01-2026",
   2: "my birthday",
   username: "koteswara reddy",
-  password: "nanna"
+  password: "annayya"
 };
 
 function playSound(type = "click") {
@@ -38,8 +38,8 @@ let step = 0;
 
 const questions = [
   { text: "What’s your nickname? 💫", placeholder: "Type it here...", hint: "Hint: Something fun & crazy 🤪" },
-  { text: "What’s today’s date? 📅", placeholder: "Ex: 01-01-2026", hint: "" },
-  { text: "What makes today special? ✨", placeholder: "Just 2 words", hint: "" },
+  { text: "What’s your birthday date? 📅", placeholder: "Ex: 01-01-2026", hint: "" },
+  { text: "What makes previous day special? ✨", placeholder: "Just 2 words", hint: "" },
   { text: "Too many questions, right? 😜 Let’s login now!", placeholder: "", hint: "" }
 ];
 
