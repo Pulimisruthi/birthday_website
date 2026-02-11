@@ -1,11 +1,11 @@
 const errorText = document.getElementById("errorToast");
 
 const backgrounds = [
-  { img: "../assets/images/pink_red.png", desktop: "35% 45%", mobile: "50% 60%" },
-  { img: "../assets/images/blue_dress.png", desktop: "35% 60%", mobile: "50% 80%" },
-  { img: "../assets/images/pink_dress.png", desktop: "50% 40%", mobile: "60% 40%" },
-  { img: "../assets/images/red_dress.png", desktop: "50% 30%", mobile: "50% 40%" },
-  { img: "../assets/images/pink_dress(2).png", desktop: "50% 30%", mobile: "center" }
+  { img: "assets/images/pink_red.png", desktop: "35% 45%", mobile: "50% 60%" },
+  { img: "assets/images/blue_dress.png", desktop: "35% 60%", mobile: "50% 80%" },
+  { img: "assets/images/pink_dress.png", desktop: "50% 40%", mobile: "60% 40%" },
+  { img: "assets/images/red_dress.png", desktop: "50% 30%", mobile: "50% 40%" },
+  { img: "assets/images/pink_dress(2).png", desktop: "50% 30%", mobile: "center" }
 ];
 
 const correctAnswers = {

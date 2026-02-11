@@ -41,36 +41,36 @@ const prevBtn = document.querySelector(".prev");
 
 const images = [
   {
-    desktopSrc: "../assets/images/rakhi.jpeg",
-    mobileSrc: "../assets/images/rakhi(2).jpeg",
+    desktopSrc: "assets/images/rakhi.jpeg",
+    mobileSrc: "assets/images/rakhi(2).jpeg",
     text: "A small thread… holding a lifetime of love,where i can forward that day through out my life ❤️",
     desktopPos: "center 25%",
     mobilePos: "55% center"
   },
   {
-    desktopSrc: "../assets/images/tomandjerry_pic.jpeg",
-    mobileSrc: "../assets/images/tomandjerry_pic.jpeg",
+    desktopSrc: "assets/images/tomandjerry_pic.jpeg",
+    mobileSrc: "assets/images/tomandjerry_pic.jpeg",
     text: "You are my tom & i am your jerry,i don't like fighting with you but that is the thing I do the most 😂😂",
     desktopPos: "center 65%",
     mobilePos: "center"
   },
   {
-    desktopSrc: "../assets/images/anna_birthday.jpeg",
-    mobileSrc: "../assets/images/anna_birthday.jpeg",
+    desktopSrc: "assets/images/anna_birthday.jpeg",
+    mobileSrc: "assets/images/anna_birthday.jpeg",
     text: "Some bonds very special like ours,fights and misunderstands may increase gap btw each other but doesnot decrease the love ❤️🤍",
     desktopPos: "center 35%",
     mobilePos: "45% center"
   },
   {
-    desktopSrc: "../assets/images/naa_birthday.png",
-    mobileSrc: "../assets/images/naa_birthday.png",
+    desktopSrc: "assets/images/naa_birthday.png",
+    mobileSrc: "assets/images/naa_birthday.png",
     text: "Where my memories began — with you and one of the best birthday for me 💛❤️",
     desktopPos: "center",
     mobilePos: "50% center"
   },
   {
-    desktopSrc: "../assets/images/selfie(2).jpeg",
-    mobileSrc: "../assets/images/first_selfie.jpeg",
+    desktopSrc: "assets/images/selfie(2).jpeg",
+    mobileSrc: "assets/images/first_selfie.jpeg",
     text: "Our selfie,Captured together, forever.Not perfect, but perfectly ours.❤️✨✨",
     desktopPos: "100% center",
     mobilePos: "30% top"
